@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/index.html" />
+    <title>Invoicing system</title>
+    <!-- Library .js files -->
+    <script src="/assets/libs/angular/angular.min.js"></script>
+    <script src="/assets/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/assets/libs/angular-resource/angular-resource.min.js"></script>
+    <script src="/assets/libs/angular-auto-save-form/dist/auto-save-form.js"></script>
+    <script src="/assets/libs/jquery/jquery-2.0.3.min.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/libs/underscore/underscore.js"></script>
+    <script src="/assets/libs/angular-animate/angular-animate.min.js"></script>
+    <script src="/assets/libs/angular-aria/angular-aria.min.js"></script>
+    <script src="/assets/libs/angular-material/angular-material.min.js"></script>
+    <script src="/assets/libs/bootstrap-material-design/dist/js/material.min.js"></script>
+    <script src="/assets/libs/bootstrap-material-design/dist/js/ripples.min.js"></script>
+    <!-- App .js files -->
+    <script src="/shared/addFormsService.js"></script>
+    <script src="/shared/invoiceService.js"></script>
+    <script src="/shared/calculateServices.js"></script>
+    <script src="/components/home/homeController.js"></script>
+    <script src="/components/customers/customersController.js"></script>
+    <script src="/components/products/productsController.js"></script>
+    <script src="/components/invoiceForm/invoiceFormController.js"></script>
+    <script src="/components/viewInvoice/viewInvoiceController.js"></script>
+    <script src="/app.js"></script>
+    <script src="/constants/urlBase.js"></script>
+    <!-- Library .css files -->
+    <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libs/angular-material/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap-material-design/dist/css/ripples.min.css">
+    <!-- App .css files -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <h4 class="navbar-text">Invoicing system</h4>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="customers">Customers</a></li>
+                <li><a ui-sref="products">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section ui-view></section>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<div class="container">
+    <form class="form-horizontal" role="form" name="invoiceFormForm" ng-submit="invoiceForm.save()" auto-save-form="invoiceForm.saveObserver()">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Customer name</label>
+            <div class="col-sm-5">
+                <md-autocomplete required md-min-length="0" placeholder="Select customer" md-selected-item-change="invoiceForm.saveObserver()" md-selected-item="invoiceForm.invoice.selectedCustomer" md-item-text="item.name" md-search-text="searchCustomer" md-items="item in invoiceForm.getCustomerNames(searchCustomer)">
+                    <md-item-template>
+                        <span>{{item.id}} - </span>
+                        <span md-highlight-text="searchCustomer" md-highlight-flags="^i">{{item.name}}</span>
+                    </md-item-template>
+                    <md-not-found>  
+                        No states matching "{{searchCustomer}}" were found.
+                    </md-not-found>
+                </md-autocomplete>
+                <!-- <input type="text" ng-model="invoiceForm.selectedCustomer.name"> -->
+                <button type="button" class="btn btn-primary" ng-click="invoiceForm.customerAddForm()">Add customer</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Customer phone</label>
+            <div class="col-sm-5">  
+                <input type="text" name="phone" ng-model="invoiceForm.invoice.selectedCustomer.phone" ng-readonly="true" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Customer address</label>
+            <div class="col-sm-5">
+                <input type="text" name="address" ng-model="invoiceForm.invoice.selectedCustomer.address" ng-readonly="true" class="form-control" />
+            </div>
+        </div>
+        <table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total price</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="invoiceItem in invoiceForm.invoice.invoiceItems">
+                    <td>
+                        <md-autocomplete required md-no-cache="true" md-search-text-change="invoiceForm.searchTextChange(searchText)" md-min-length="0 " placeholder="Products" md-selected-item-change="invoiceForm.saveObserver()" md-selected-item="invoiceItem.selectedProduct" md-item-text="item.name " md-search-text="searchText" md-items="item in invoiceForm.getProductNames(searchText) ">
+                            <md-item-template>
+                                <span>{{item.id}} - </span>
+                                <span md-highlight-text="searchProduct " md-highlight-flags="^i">{{item.name}}</span>
+                            </md-item-template>
+                            <md-not-found>
+                                No states matching "{{searchText}} " were found.
+                            </md-not-found>
+                        </md-autocomplete>
+                        <button type="button" class="btn btn-primary" ng-click="invoiceForm.productAddForm($index)">Add product</button>
+                        <!-- <input type="text " ng-model="invoiceItem.product_name " class="form-control " /> -->
+                    </td>
+                    <td>
+                        <input type="number" name="price" ng-readonly="true" ng-model="invoiceItem.selectedProduct.price" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="number" name="quantity" ng-model="invoiceItem.quantity" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="number" name="invoiceTotal" ng-readonly="true" ng-model="invoiceForm.invoiceItemTotal(invoiceItem.quantity, invoiceItem.selectedProduct.price)" class="form-control " />
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" ng-click="invoiceForm.deleteInvoiceItem(invoiceItem.id, $index)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Diccount :
+                        <input type="number" name="discount" ng-model="invoiceForm.invoice.discount" ng-validate="number">%</td>
+                    <td>Subtotal : {{invoiceForm.invoiceSubTotal(invoiceForm.invoice.invoiceItems)}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-primary " ng-click="invoiceForm.addInvoiceItem()">Add invoice item</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>Total : {{invoiceForm.invoiceGrandTotal(invoiceForm.ivoice.total, invoiceForm.invoice.discount, invoiceForm.invoice.invoiceItems)}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-sm-10">
+            <button ng-click="invoiceForm.saveForm()" class="btn btn-primary">Save invoice</button>
+        </div>
+    </form>
+</div>

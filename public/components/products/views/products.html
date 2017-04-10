@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="navbar-form" role="search">
+        <div class="form-group">
+            <p>Filter:</p>
+            <input placeholder="by any value" type="text" ng-model="f.$" class="form-control">
+        </div>
+    </div>
+    <section>
+        <div class="table-wrapper">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products.products | filter: f">
+                        <td>
+                            {{product.id}}
+                        </td>
+                        <td>
+                            {{product.name}}
+                        </td>
+                        <td>
+                            {{product.price}}
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" ng-click="products.productForm(product)">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" ng-click="products.deleteProduct(product.id, $index)">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-10">
+            <button type="button" class="btn btn-primary" ng-click="products.productForm()">Add product</button>
+        </div>
+    </section>
+</div>

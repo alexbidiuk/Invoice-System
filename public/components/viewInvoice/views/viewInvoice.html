@@ -1,0 +1,62 @@
+<div class="container">
+    <form class="form-horizontal" role="form" name="viewInvoiceForm" auto-save-form="viewInvoice.saveObserver()">
+        <div class="form-group">
+            <div class="col-sm-5">
+                Customer: {{viewInvoice.invoice.selectedCustomer.name}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-5">
+                Customer phone: {{viewInvoice.invoice.selectedCustomer.phone}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-5">
+                Customer address: {{viewInvoice.invoice.selectedCustomer.address}}
+            </div>
+        </div>
+        <table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="invoiceItem in viewInvoice.invoice.invoiceItems">
+                    <td>
+                        {{invoiceItem.selectedProduct.name}}
+                    </td>
+                    <td>
+                        {{invoiceItem.selectedProduct.price}}
+                    </td>
+                    <td>
+                        {{invoiceItem.quantity}}
+                    </td>
+                    <td>
+                        {{viewInvoice.invoiceItemTotal(invoiceItem.quantity, invoiceItem.selectedProduct.price)}}
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Diccount : {{viewInvoice.invoice.discount}}
+                    </td>
+                    <td>Subtotal : {{viewInvoice.invoiceSubTotal(viewInvoice.invoice.invoiceItems)}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button ui-sref="editInvoice({id: viewInvoice.invoice.id})" class="btn btn-primary">Edit invoice</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>Total : {{viewInvoice.invoiceGrandTotal(viewInvoice.invoice.total, viewInvoice.invoice.discount, viewInvoice.invoice.invoiceItems)}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

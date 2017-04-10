@@ -1,0 +1,141 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-auto-save-form",
+        "scope": null,
+        "escapedName": "angular-auto-save-form",
+        "name": "angular-auto-save-form",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Volumes/mac/Test"
+    ]
+  ],
+  "_from": "angular-auto-save-form@latest",
+  "_id": "angular-auto-save-form@1.3.0",
+  "_inCache": true,
+  "_location": "/angular-auto-save-form",
+  "_nodeVersion": "7.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-auto-save-form-1.3.0.tgz_1486292208750_0.3837322143372148"
+  },
+  "_npmUser": {
+    "name": "tiberiuzuld",
+    "email": "tiberiuzuld@gmail.com"
+  },
+  "_npmVersion": "4.2.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-auto-save-form",
+    "scope": null,
+    "escapedName": "angular-auto-save-form",
+    "name": "angular-auto-save-form",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-auto-save-form/-/angular-auto-save-form-1.3.0.tgz",
+  "_shasum": "799908ba16a555c491e0cd91cb6b2c6c55014b2f",
+  "_shrinkwrap": null,
+  "_spec": "angular-auto-save-form",
+  "_where": "/Volumes/mac/Test",
+  "authors": [
+    "Tiberiu Zuld"
+  ],
+  "bugs": {
+    "url": "https://github.com/tiberiuzuld/angular-auto-save-form/issues"
+  },
+  "dependencies": {},
+  "description": "Angular auto save form changed inputs",
+  "devDependencies": {
+    "browser-sync": "2.18.7",
+    "browser-sync-spa": "1.0.3",
+    "chalk": "1.1.3",
+    "del": "2.2.2",
+    "eslint-plugin-angular": "1.6.1",
+    "estraverse": "4.2.0",
+    "gulp": "3.9.1",
+    "gulp-angular-filesort": "1.1.1",
+    "gulp-angular-templatecache": "2.0.0",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-eslint": "3.0.1",
+    "gulp-filter": "5.0.0",
+    "gulp-flatten": "0.3.1",
+    "gulp-inject": "4.2.0",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-minify-css": "1.2.4",
+    "gulp-minify-html": "1.0.6",
+    "gulp-ng-annotate": "2.0.0",
+    "gulp-protractor": "3.0.0",
+    "gulp-rename": "1.2.2",
+    "gulp-replace": "0.5.4",
+    "gulp-rev": "7.1.2",
+    "gulp-rev-replace": "0.4.3",
+    "gulp-size": "2.1.0",
+    "gulp-sourcemaps": "2.1.1",
+    "gulp-uglify": "2.0.1",
+    "gulp-useref": "3.1.2",
+    "gulp-util": "3.0.8",
+    "http-proxy-middleware": "0.17.3",
+    "karma": "1.4.1",
+    "karma-angular-filesort": "1.0.2",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "1.1.0",
+    "karma-ng-html2js-preprocessor": "1.0.0",
+    "karma-phantomjs-launcher": "1.0.2",
+    "lodash": "4.17.4",
+    "main-bower-files": "2.13.1",
+    "phantomjs-prebuilt": "2.1.14",
+    "uglify-save-license": "0.4.1",
+    "wiredep": "4.0.0",
+    "wrench": "1.5.9"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "799908ba16a555c491e0cd91cb6b2c6c55014b2f",
+    "tarball": "https://registry.npmjs.org/angular-auto-save-form/-/angular-auto-save-form-1.3.0.tgz"
+  },
+  "engines": {
+    "node": ">=4.2.1"
+  },
+  "files": [
+    "dist/auto-save-form.css",
+    "dist/auto-save-form.js",
+    "index.js"
+  ],
+  "gitHead": "bf556e2a6e9d623687c8fe2e5476870f59bf6fa0",
+  "homepage": "https://github.io/tiberiuzuld/angular-auto-save-form",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "auto save form",
+    "debounce",
+    "changed fields"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "tiberiuzuld",
+      "email": "tiberiuzuld@gmail.com"
+    }
+  ],
+  "name": "angular-auto-save-form",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiberiuzuld/angular-auto-save-form.git"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "version": "1.3.0"
+}

@@ -1,0 +1,18 @@
+<md-dialog>
+    <md-content layout-padding>
+        <form name="addProductForm" role="form" ng-submit="addProduct()" auto-save-form="addProductObserver()">
+            <md-input-container>
+                <label>Product name</label>
+                <input type="text" required id="name" name="name" ng-model="newProduct.name" class="form-control" />
+            </md-input-container>
+            <md-input-container>
+                <label>Product price</label>
+                <input type="number" required id="address" name="address" ng-model="newProduct.price" class="form-control" id="address" />
+            </md-input-container>
+            <md-dialog-actions>
+                <input type="submit" class="btn btn-primary" value="Save" />
+                <md-button ng-click="cancel()" class="btn btn-primary">Cancel</md-button>
+            </md-dialog-actions>
+        </form>
+    </md-content>
+</md-dialog>
