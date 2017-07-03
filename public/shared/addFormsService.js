@@ -77,10 +77,8 @@
 
             $scope.addCustomer = function() {
 
-                $scope.addCustomerObserver().then(function() {
-
-                    $mdDialog.hide();
-
+                return $scope.addCustomerObserver().then(function(newCustomer) {
+                    $mdDialog.hide(newCustomer);
                 });
             };
 
@@ -153,9 +151,9 @@
 
             $scope.addProduct = function() {
 
-                $scope.addProductObserver().then(function() {
+                $scope.addProductObserver().then(function(newProduct) {
 
-                    $mdDialog.hide();
+                    $mdDialog.hide(newProduct);
 
                 });
             };

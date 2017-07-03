@@ -19,9 +19,9 @@
 
         invoiceForm.getProductNames = getProductNames;
 
-        invoiceForm.showCustomerAddForm = addFormsService.showCustomerAddForm;
+        invoiceForm.showCustomerForm = addFormsService.showCustomerForm;
 
-        invoiceForm.showProductAddForm = addFormsService.showProductAddForm;
+        invoiceForm.showProductForm = addFormsService.showProductForm;
 
         invoiceForm.customerAddForm = customerAddForm;
 
@@ -53,7 +53,6 @@
         if (typeof getInvoice.customer != 'undefined') {
 
             invoiceForm.invoice.selectedCustomer = getInvoice.customer;
-
         };
 
 
@@ -81,7 +80,7 @@
 
         function productAddForm(index) {
 
-            return invoiceForm.showProductAddForm().then(function(newProduct) {
+            return invoiceForm.showProductForm().then(function(newProduct) {
 
                 invoiceForm.invoice.invoiceItems[index].selectedProduct = newProduct;
 
@@ -90,7 +89,7 @@
 
         function customerAddForm() {
 
-            return invoiceForm.showCustomerAddForm().then(function(newCustomer) {
+            return invoiceForm.showCustomerForm().then(function(newCustomer) {
 
                 invoiceForm.invoice.selectedCustomer = newCustomer;
 
